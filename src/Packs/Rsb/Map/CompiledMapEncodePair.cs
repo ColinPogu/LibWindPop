@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace LibWindPop.PopCap.Packs.Rsb.Map
+namespace LibWindPop.Packs.Rsb.Map
 {
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 0x14)]
     public struct CompiledMapEncodePair

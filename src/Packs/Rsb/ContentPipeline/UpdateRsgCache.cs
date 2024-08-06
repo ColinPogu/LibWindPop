@@ -3,7 +3,7 @@ using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using LibWindPop.Images.PtxRsb;
 using LibWindPop.Packs.Common;
 using LibWindPop.Packs.Rsb.RsbStructures;
-using LibWindPop.PopCap.Packs.Rsb.Map;
+using LibWindPop.Packs.Rsb.Map;
 using LibWindPop.Utils;
 using LibWindPop.Utils.Extension;
 using LibWindPop.Utils.FileSystem;

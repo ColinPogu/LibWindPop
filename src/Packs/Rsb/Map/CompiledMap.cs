@@ -3,7 +3,7 @@ using LibWindPop.Utils.Extension;
 using System;
 using System.Text;
 
-namespace LibWindPop.PopCap.Packs.Rsb.Map
+namespace LibWindPop.Packs.Rsb.Map
 {
     /// <summary>
     /// rsb中用于快速查找字符串对应信息的哈希表，利用字符串排序过的特性，可以实现高效率的查找

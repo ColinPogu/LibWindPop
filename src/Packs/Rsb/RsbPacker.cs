@@ -1,6 +1,6 @@
 ﻿using LibWindPop.Packs.Rsb.ContentPipeline;
 using LibWindPop.Packs.Rsb.RsbStructures;
-using LibWindPop.PopCap.Packs.Rsb.Map;
+using LibWindPop.Packs.Rsb.Map;
 using LibWindPop.Utils;
 using LibWindPop.Utils.Extension;
 using LibWindPop.Utils.FileSystem;

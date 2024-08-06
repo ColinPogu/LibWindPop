@@ -1,7 +1,7 @@
 ﻿using LibWindPop.Utils;
 using System;
 
-namespace LibWindPop.PopCap.Packs.Rsb.Map
+namespace LibWindPop.Packs.Rsb.Map
 {
     internal static unsafe class CompiledMapEncoder
     {
