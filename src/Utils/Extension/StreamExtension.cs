@@ -11,117 +11,145 @@ namespace LibWindPop.Utils.Extension
         public static byte ReadUInt8(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[1];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return buffer[0];
         }
 
         public static ushort ReadUInt16LE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[2];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadUInt16LittleEndian(buffer);
         }
 
         public static ushort ReadUInt16BE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[2];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadUInt16BigEndian(buffer);
         }
 
         public static uint ReadUInt32LE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[4];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadUInt32LittleEndian(buffer);
         }
 
         public static uint ReadUInt32BE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[4];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadUInt32BigEndian(buffer);
         }
 
         public static ulong ReadUInt64LE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[8];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadUInt64LittleEndian(buffer);
         }
 
         public static ulong ReadUInt64BE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[8];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadUInt64BigEndian(buffer);
         }
 
         public static sbyte ReadInt8(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[1];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return (sbyte)buffer[0];
         }
 
         public static short ReadInt16LE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[2];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadInt16LittleEndian(buffer);
         }
 
         public static short ReadInt16BE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[2];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadInt16BigEndian(buffer);
         }
 
         public static int ReadInt32LE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[4];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadInt32LittleEndian(buffer);
         }
 
         public static int ReadInt32BE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[4];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadInt32BigEndian(buffer);
         }
 
         public static long ReadInt64LE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[8];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadInt64LittleEndian(buffer);
         }
 
         public static long ReadInt64BE(this Stream stream)
         {
             Span<byte> buffer = stackalloc byte[8];
-            stream.Read(buffer);
+            stream.ReadExactly(buffer);
             return BinaryPrimitives.ReadInt64BigEndian(buffer);
         }
 
-        public static string ReadString(this Stream stream, int size, Encoding encoding)
+        public static float ReadFloat32LE(this Stream stream)
+        {
+            Span<byte> buffer = stackalloc byte[4];
+            stream.ReadExactly(buffer);
+            return BinaryPrimitives.ReadSingleLittleEndian(buffer);
+        }
+
+        public static float ReadFloat32BE(this Stream stream)
+        {
+            Span<byte> buffer = stackalloc byte[4];
+            stream.ReadExactly(buffer);
+            return BinaryPrimitives.ReadSingleBigEndian(buffer);
+        }
+
+        public static double ReadFloat64LE(this Stream stream)
+        {
+            Span<byte> buffer = stackalloc byte[8];
+            stream.ReadExactly(buffer);
+            return BinaryPrimitives.ReadDoubleLittleEndian(buffer);
+        }
+
+        public static double ReadFloat64BE(this Stream stream)
+        {
+            Span<byte> buffer = stackalloc byte[8];
+            stream.ReadExactly(buffer);
+            return BinaryPrimitives.ReadDoubleBigEndian(buffer);
+        }
+
+        public static string? ReadString(this Stream stream, int size, Encoding encoding)
         {
             if (size <= 0)
             {
-                return string.Empty;
+                return null;
             }
             if (size <= 0x800)
             {
                 Span<byte> buffer = stackalloc byte[size];
-                stream.Read(buffer);
+                stream.ReadExactly(buffer);
                 return encoding.GetString(buffer);
             }
             using (NativeMemoryOwner owner = new NativeMemoryOwner((uint)size))
             {
                 Span<byte> buffer = owner.AsSpan();
-                stream.Read(buffer);
+                stream.ReadExactly(buffer);
                 return encoding.GetString(buffer);
             }
         }
