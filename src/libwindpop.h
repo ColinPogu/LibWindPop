@@ -1,4 +1,4 @@
-﻿#ifndef LIBWINDPOP_H
+#ifndef LIBWINDPOP_H
 #define LIBWINDPOP_H
 #define WIND_IMPORT
 #define WIND_API __stdcall
