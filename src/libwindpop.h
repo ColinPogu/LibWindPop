@@ -15,28 +15,33 @@ typedef enum ENUMResult
     Result_Error = 1,
 } EResult;
 
-constexpr const char* PtxHandlerAndroidV1 = "PtxHandlerAndroidV1";
-constexpr const char* PtxHandlerAndroidV2 = "PtxHandlerAndroidV2";
-constexpr const char* PtxHandlerAndroidV3 = "PtxHandlerAndroidV3";
-constexpr const char* PtxHandleriOSV1 = "PtxHandleriOSV1";
-constexpr const char* PtxHandleriOSV2 = "PtxHandleriOSV2";
-constexpr const char* PtxHandleriOSV3 = "PtxHandleriOSV3";
-constexpr const char* PtxHandleriOSV4 = "PtxHandleriOSV4";
-constexpr const char* PtxHandleriOSV5 = "PtxHandleriOSV5";
-constexpr const char* PtxHandlerPS3V1 = "PtxHandlerPS3V1";
-constexpr const char* PtxHandlerPS4V1 = "PtxHandlerPS4V1";
-constexpr const char* PtxHandlerXbox360V1 = "PtxHandlerXbox360V1";
-constexpr const char* PtxHandlerXbox360V2 = "PtxHandlerXbox360V2";
-constexpr const char* PtxHandlerPVZ2CNAndroidV1 = "PtxHandlerPVZ2CNAndroidV1";
-constexpr const char* PtxHandlerPVZ2CNAndroidV2 = "PtxHandlerPVZ2CNAndroidV2";
-constexpr const char* PtxHandlerPVZ2CNAndroidV3 = "PtxHandlerPVZ2CNAndroidV3";
-constexpr const char* PtxHandlerPVZ2CNAndroidV4 = "PtxHandlerPVZ2CNAndroidV4";
-constexpr const char* PtxHandlerPVZ2CNAndroidV5 = "PtxHandlerPVZ2CNAndroidV5";
-constexpr const char* PtxHandlerPVZ2CNiOSV1 = "PtxHandlerPVZ2CNiOSV1";
-constexpr const char* PtxHandlerPVZ2CNiOSV2 = "PtxHandlerPVZ2CNiOSV2";
-constexpr const char* RsbPipelineUpdateRsgCache = "UpdateRsgCache";
-constexpr const char* RsbPipelineEncodePtxFromPng = "EncodePtxFromPng";
-constexpr const char* PakPipelinePakRebuildFile = "PakRebuildFile";
+#define PtxHandlerAndroidV1 "PtxHandlerAndroidV1"
+#define PtxHandlerAndroidV2 "PtxHandlerAndroidV2"
+#define PtxHandlerAndroidV3 "PtxHandlerAndroidV3"
+#define PtxHandleriOSV1 "PtxHandleriOSV1"
+#define PtxHandleriOSV2 "PtxHandleriOSV2"
+#define PtxHandleriOSV3 "PtxHandleriOSV3"
+#define PtxHandleriOSV4 "PtxHandleriOSV4"
+#define PtxHandleriOSV5 "PtxHandleriOSV5"
+#define PtxHandlerPS3V1 "PtxHandlerPS3V1"
+#define PtxHandlerPS4V1 "PtxHandlerPS4V1"
+#define PtxHandlerXbox360V1 "PtxHandlerXbox360V1"
+#define PtxHandlerXbox360V2 "PtxHandlerXbox360V2"
+#define PtxHandlerPVZ2CNAndroidV1 "PtxHandlerPVZ2CNAndroidV1"
+#define PtxHandlerPVZ2CNAndroidV2 "PtxHandlerPVZ2CNAndroidV2"
+#define PtxHandlerPVZ2CNAndroidV3 "PtxHandlerPVZ2CNAndroidV3"
+#define PtxHandlerPVZ2CNAndroidV4 "PtxHandlerPVZ2CNAndroidV4"
+#define PtxHandlerPVZ2CNAndroidV5 "PtxHandlerPVZ2CNAndroidV5"
+#define PtxHandlerPVZ2CNiOSV1 "PtxHandlerPVZ2CNiOSV1"
+#define PtxHandlerPVZ2CNiOSV2 "PtxHandlerPVZ2CNiOSV2"
+#define RsbPipelineUpdateRsgCache "UpdateRsgCache"
+#define RsbPipelineEncodePtxFromPng "EncodePtxFromPng"
+
+#define PakPipelinePakRebuildFile "PakRebuildFile"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 WIND_IMPORT EResult WIND_API RsbUnpack(const char* rsbPath, const char* unpackPath, const char* ptxHandlerType, EBool useGroupFolder, int logLevel, EBool throwException);
 
@@ -91,4 +96,8 @@ WIND_IMPORT EResult WIND_API GetError(char* buffer);
 WIND_IMPORT EResult WIND_API GetErrorU8(char* buffer);
 
 WIND_IMPORT int WIND_API GetLibVersion();
+#ifdef __cplusplus
+}
+#endif
+
 #endif
