@@ -20,4 +20,8 @@ const char newPakPath[]  = "D:\\main_new.pak";
 const char unpackPath[]  = "D:\\main_unpack_pak";
 ```
 
+If MSVC reports syntax errors when including `LibWindPop.h`, verify that the
+header uses Windows line endings and no UTF-8 BOM. You can regenerate a clean
+copy by rerunning `build/win-x64-shared-library.bat`.
+
 Running the compiled executable will unpack `rawPakPath` to `unpackPath` and then repack the contents to `newPakPath`.

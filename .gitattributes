@@ -3,6 +3,10 @@
 ###############################################################################
 * text=auto
 
+# Ensure generated headers and batch files retain CRLF endings for Windows
+src/libwindpop.h eol=crlf
+build/*.bat eol=crlf
+
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
